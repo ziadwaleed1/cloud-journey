@@ -1,59 +1,72 @@
-# Module 01 - Cloud Concepts Overview
+# AWS Academy Cloud Foundations
 
-## Overview
-
-This module introduces the fundamental concepts of cloud computing, the advantages of cloud adoption, AWS core concepts, and the AWS Cloud Adoption Framework (CAF).
+This section contains my study notes, knowledge maps, and learning materials from the AWS Academy Cloud Foundations course.
 
 ---
 
-## Knowledge Areas
+## Module 01 - Cloud Concepts Overview
 
-### Cloud Computing
+This module covers the fundamental concepts of cloud computing, the business value of cloud adoption, AWS core concepts, and the AWS Cloud Adoption Framework (CAF).
 
-* Definition
-* Traditional IT
-* Infrastructure as Software
-* Service Models
-* Deployment Models
-* Resource Concepts
+### Knowledge Maps
 
-### Advantages of Cloud Computing
-
-* Trade CapEx for Variable Expense
-* Massive Economies of Scale
-* Stop Guessing Capacity
-* Increase Speed and Agility
-* Stop Running Data Centers
-* Go Global in Minutes
-
-### Introduction to AWS
-
-* AWS Fundamentals
-* Web Services
-* AWS Service Categories
-* Core AWS Services
-* Ways to Interact with AWS
-
-### AWS Cloud Adoption Framework (CAF)
-
-* Business Perspective
-* People Perspective
-* Governance Perspective
-* Platform Perspective
-* Security Perspective
-* Operations Perspective
+* Cloud Computing
+* Advantages of Cloud Computing
+* Introduction to AWS
+* AWS Cloud Adoption Framework (CAF)
 
 ---
 
 ## Repository Structure
 
 ```text
-Module-01-Cloud-Concepts-Overview
+AWS-Cloud-Foundations
 │
-├── Knowledge-Tree.md
+├── Module-01-Cloud-Concepts-Overview
+│   │
+│   ├── Knowledge-Tree.md
+│   │
+│   ├── Cloud-Computing-Map.md
+│   ├── Advantages-of-Cloud-Map.md
+│   ├── Introduction-to-AWS-Map.md
+│   └── AWS-CAF-Map.md
 │
-├── Cloud-Computing-Map.md
-├── Advantages-of-Cloud-Map.md
-├── Introduction-to-AWS-Map.md
-└── AWS-CAF-Map.md
+├── Module-02
+├── Module-03
+├── Module-04
+├── Module-05
+├── Module-06
+├── Module-07
+├── Module-08
+├── Module-09
+├── Module-10
+└── Resources
+```
+
+---
+
+## Current Progress
+
+* [x] Module 01 - Cloud Concepts Overview
+* [ ] Module 02
+* [ ] Module 03
+* [ ] Module 04
+* [ ] Module 05
+* [ ] Module 06
+* [ ] Module 07
+* [ ] Module 08
+* [ ] Module 09
+* [ ] Module 10
+
+---
+
+## Learning Goals
+
+* Build a strong foundation in cloud computing
+* Understand AWS core services and architecture concepts
+* Document key concepts using knowledge maps
+* Create structured study notes for certification preparation
+* Track learning progress throughout the AWS Academy Cloud Foundations course
+
+```
 ```
