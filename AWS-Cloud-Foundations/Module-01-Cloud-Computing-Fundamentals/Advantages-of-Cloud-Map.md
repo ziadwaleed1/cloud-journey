@@ -2,7 +2,7 @@
 
 ```mermaid
 mindmap
-  root((Advantages of Cloud Computing))
+  root((Cloud Benefits))
 
     Trade CapEx for Variable Expense
 
