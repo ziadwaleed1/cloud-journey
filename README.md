@@ -17,7 +17,7 @@ AWS Academy Cloud Foundations
 
 ---
 
-## 🧠 Topics Covered
+## 🧠 Learning Areas
 
 - Cloud Computing
 - AWS Fundamentals
