@@ -42,4 +42,4 @@ cloud-journey
 
 ## 🚀 Purpose
 
-This repository is used to organize my learning materials, track progress, and build a solid foundation in cloud computing and AWS.
+This repository documents my cloud learning journey through structured notes, concept maps, and practical exercises while studying AWS Academy courses.
