@@ -10,8 +10,7 @@ Create an IAM user with administrative privileges and provide access to AWS Bill
 
 Created a new IAM user named `test1` and enabled console access.
 
-![Create User](<img width="1907" height="928" alt="Screenshot 2026-06-12 185851" src="https://github.com/user-attachments/assets/67674ccb-a9b9-46fc-8f45-f93d65c8dee6" />
-)
+![Create User](https://github.com/user-attachments/assets/07c272a3-e404-49e1-bda3-b08e4387c264)
 
 ---
 
@@ -21,21 +20,43 @@ Attached the AWS managed policy:
 
 * AdministratorAccess
 
-![Administrator Access](<img width="1346" height="594" alt="Screenshot 2026-06-12 185927" src="https://github.com/user-attachments/assets/093e6986-ca74-4a98-9574-752a4d542367" />
-)
+![Administrator Access](https://github.com/user-attachments/assets/53492712-8b2f-4a28-95d1-abc6b152b18a)
 
 ---
 
-### Step 3: Enable Billing Access
+### Step 3: Review AWS Documentation
 
-Verified that IAM User and Role Access to Billing Information is activated in the AWS account.
+Reviewed AWS official documentation to understand Billing access requirements for IAM users.
 
-![Billing Access](<img width="1917" height="882" alt="Screenshot 2026-06-12 192423" src="https://github.com/user-attachments/assets/53cfc95c-c370-4841-b365-f2cdf99641b1" />
-)
+![AWS Billing Documentation](https://github.com/user-attachments/assets/0716bd6d-bc6d-4e91-80b5-dd342e2872d2)
 
 ---
 
-### Step 4: Attach Billing Policy
+### Step 4: Billing Access Denied
+
+Attempted to access the Bills page using the IAM user and received an access denied message.
+
+![Billing Access Denied](https://github.com/user-attachments/assets/448a9c41-18c1-418c-b225-3b46665798c9)
+
+---
+
+### Step 5: Payments Access Denied
+
+Attempted to access the Payments page and confirmed that Billing permissions were still missing.
+
+![Payments Access Denied](https://github.com/user-attachments/assets/448a9c41-18c1-418c-b225-3b46665798c9)
+
+---
+
+### Step 6: Enable IAM Billing Access
+
+Activated IAM User and Role Access to Billing Information using the root account.
+
+![IAM Billing Access Activated](https://github.com/user-attachments/assets/6db12698-3bf8-44d5-8095-7f405082fa75)
+
+---
+
+### Step 7: Attach Billing Policy
 
 Attached the AWS managed policy:
 
@@ -43,59 +64,46 @@ Attached the AWS managed policy:
 
 to the IAM user.
 
-![Billing Policy](<img width="1650" height="252" alt="Screenshot 2026-06-12 194834" src="https://github.com/user-attachments/assets/857cd902-c9a5-4df6-ab4e-5ada86535b8e" />
-)
+> Add the Billing policy attachment screenshot here.
 
-### Step 5: Test Billing Access
-
-Logged in using the IAM user and verified access to AWS Billing and Cost Management services.
-
-#### Bills
-
-Verified that the user can access the Bills page.
-
-![Bills](<img width="1901" height="857" alt="Screenshot 2026-06-12 195434" src="https://github.com/user-attachments/assets/22ef2b9f-7f8b-4dd6-91f5-2bd798059728" />
-)
+```md
+![Billing Policy](YOUR_BILLING_POLICY_IMAGE_LINK)
+```
 
 ---
 
-#### Payments
+### Step 8: Verify Bills Access
 
-Verified that the user can access the Payments page.
+Successfully accessed the Bills page.
 
-![Payments](<img width="1917" height="710" alt="Screenshot 2026-06-12 195449" src="https://github.com/user-attachments/assets/339d6305-1a45-4070-bc1b-ae429199bf27" />
-)
-
----
-
-#### Cost Explorer
-
-Verified that the user can access Cost Explorer and view cost analysis data.
-
-![Cost Explorer](<img width="1907" height="787" alt="Screenshot 2026-06-12 195505" src="https://github.com/user-attachments/assets/682eefd0-6dfa-4390-bc40-be841970124c" />
-)
+![Bills Page](https://github.com/user-attachments/assets/662af8f4-9d6c-4ac6-b183-a2bc7b71e26a)
 
 ---
 
-### Validation
+### Step 9: Verify Payments Access
 
-Confirmed that the IAM user can successfully access:
+Successfully accessed the Payments page.
 
-* Bills
-* Payments
-* Cost Explorer
+![Payments Page](https://github.com/user-attachments/assets/bffb92fc-b334-4f03-883f-04d266ed220b)
 
-without permission errors.
+---
 
+### Step 10: Verify Cost Explorer Access
+
+Successfully accessed Cost Explorer.
+
+![Cost Explorer](https://github.com/user-attachments/assets/b286a48f-38dc-45ab-a8ea-05765165c621)
+
+---
 
 ## Key Learnings
 
-* IAM users do not have access to Billing information by default.
-* Billing access must be enabled at the account level.
-* Billing permissions can be managed separately from administrative permissions.
-* Root user access is required to manage account-level Billing settings.
+* IAM users cannot access Billing information by default.
+* AdministratorAccess alone does not guarantee Billing access.
+* Billing access must be enabled by the root user.
+* The Billing policy must be attached to IAM users or roles.
+* AWS documentation should be consulted when troubleshooting permission issues.
 
 ## Result
 
-Successfully created an IAM user, granted administrative permissions, configured Billing access, and validated Billing-related permissions.
-****
+Successfully created an IAM user, configured Billing permissions, resolved access issues, and validated access to Bills, Payments, and Cost Explorer.
