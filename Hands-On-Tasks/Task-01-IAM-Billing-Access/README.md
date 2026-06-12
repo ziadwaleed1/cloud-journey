@@ -2,7 +2,7 @@
 
 ## Objective
 
-Create an IAM user with administrative privileges, troubleshoot Billing access issues, and provide access to AWS Billing and Cost Management services.
+Create an IAM user with administrative privileges and provide access to AWS Billing and Cost Management services.
 
 ---
 
@@ -100,16 +100,6 @@ IAM users cannot access Billing information by default. Billing access must be e
 * Attached the Billing managed policy.
 * Retested Billing services access.
 
-### Validation
-
-Successfully verified access to:
-
-* Bills
-* Payments
-* Cost Explorer
-
-after applying the required Billing permissions.
-
 ---
 
 ## Key Learnings
@@ -122,14 +112,12 @@ after applying the required Billing permissions.
 
 ---
 
-## References
-
-* AWS Billing and Cost Management Documentation
-* AWS IAM Documentation
-* AWS Managed Policy: Billing
-
----
-
 ## Result
 
 Successfully created an IAM user, granted administrative permissions, enabled Billing access, resolved permission issues, and verified access to Bills, Payments, and Cost Explorer.
+
+---
+
+
+09-cost-explorer-page.png
+```
