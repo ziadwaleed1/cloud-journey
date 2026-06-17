@@ -19,16 +19,8 @@ This demonstrates how AWS Identity and Access Management (IAM) and S3 Bucket Pol
 
 ### Target Account
 
-* Amazon S3 Bucket
-* Bucket Policy configured to trust the IAM user from the source account
-
----
-
-## AWS Services Used
-
-* AWS IAM
-* Amazon S3
-* AWS CLI
+* Amazon S3 Bucket:
+  `cross-account-bucket-646731024374-eu-north-1-an`
 
 ---
 
@@ -47,19 +39,19 @@ The user was configured with:
 
 ### Screenshot
 
-![Create CrossUser](screenshots/Create%20CrossUser.png)
+![Create CrossUser](Create%20CrossUser.png)
 
 ---
 
 ## Step 2: Generate Access Keys
 
-Generated an Access Key ID and Secret Access Key for the IAM user.
+Generated Access Key ID and Secret Access Key for the IAM user.
 
-These credentials are required for AWS CLI authentication.
+These credentials are required to authenticate AWS CLI requests.
 
 ### Screenshot
 
-![Create Access Key](screenshots/create-access-key.png)
+![Create Access Key](create-access-key.png.png)
 
 ---
 
@@ -71,46 +63,29 @@ Created a custom IAM policy named:
 S3-CrossUser
 ```
 
-The policy grants the following permissions:
+The policy grants permissions to:
 
-* s3:ListBucket
-* s3:GetObject
-* s3:PutObject
-
-Policy JSON:
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "s3:ListBucket",
-        "s3:GetObject",
-        "s3:PutObject"
-      ],
-      "Resource": "*"
-    }
-  ]
-}
-```
+* List S3 buckets
+* Upload objects
+* Read objects
 
 ### Screenshot
 
-![Create S3 Policy](screenshots/create-s3-policy.png)
+![Create Policy](create-s3-policy.png.png)
 
 ---
 
 ## Step 4: Attach Policy to IAM User
 
-Attached the custom policy:
+Attached the custom IAM policy to the IAM user.
+
+Policy:
 
 ```text
 S3-CrossUser
 ```
 
-to the IAM user:
+User:
 
 ```text
 CrossUser
@@ -118,23 +93,23 @@ CrossUser
 
 ### Screenshot
 
-![Attach Policy](screenshots/attach-policy-to-user.png)
+![Attach Policy](attach-policy-to-user.png.png)
 
 ---
 
 ## Step 5: Configure S3 Bucket Policy
 
-A bucket policy was added to the target S3 bucket to allow the IAM user from the source account to access bucket resources.
+Configured a Bucket Policy in the target AWS account to allow cross-account access for the IAM user.
 
-Permissions granted:
+Granted permissions:
 
-* List Bucket
-* Read Objects
-* Upload Objects
+* s3:ListBucket
+* s3:GetObject
+* s3:PutObject
 
 ### Screenshot
 
-![Bucket Policy](screenshots/cross-account-bucket-policy.png)
+![Bucket Policy](cross-account-bucket-policy.png.png)
 
 ---
 
@@ -149,8 +124,8 @@ aws configure
 Provided:
 
 ```text
-AWS Access Key ID
-AWS Secret Access Key
+Access Key ID
+Secret Access Key
 Region: eu-north-1
 Output Format: json
 ```
@@ -159,17 +134,17 @@ Output Format: json
 
 ## Step 7: Verify Identity
 
-Verified the authenticated IAM identity using:
+Verified the active AWS identity:
 
 ```bash
 aws sts get-caller-identity
 ```
 
-This command confirmed that AWS CLI was authenticated using the CrossUser IAM account.
+The output confirmed authentication as the IAM user.
 
 ---
 
-## Step 8: Test Cross-Account Access
+## Step 8: Upload File to Target S3 Bucket
 
 Created a test file:
 
@@ -177,13 +152,13 @@ Created a test file:
 echo "Cross Account Test" > test.txt
 ```
 
-Uploaded the file to the target S3 bucket:
+Uploaded the file to the target bucket:
 
 ```bash
 aws s3 cp test.txt s3://cross-account-bucket-646731024374-eu-north-1-an/
 ```
 
-Successful upload output:
+Successful output:
 
 ```text
 upload: .\test.txt to s3://cross-account-bucket-646731024374-eu-north-1-an/test.txt
@@ -191,45 +166,44 @@ upload: .\test.txt to s3://cross-account-bucket-646731024374-eu-north-1-an/test.
 
 ### Screenshot
 
-![Cross Account Success](screenshots/cross-account-access-success.png)
+![Cross Account Success](cross-account-access-success.png.png)
 
 ---
 
-## Validation Results
+## Additional Bucket Policy Configuration Screenshot
 
-The following tasks were successfully completed:
-
-✅ IAM User Creation
-
-✅ Access Key Generation
-
-✅ IAM Policy Creation
-
-✅ Policy Attachment
-
-✅ S3 Bucket Policy Configuration
-
-✅ AWS CLI Authentication
-
-✅ Cross-Account Access Verification
-
-✅ File Upload to Target S3 Bucket
+![Bucket Policy Configuration](configure-bucket-policy.png.png)
 
 ---
 
-## Security Concepts Demonstrated
+## Validation
 
-* Identity-Based Policies (IAM Policies)
-* Resource-Based Policies (S3 Bucket Policies)
-* Cross-Account Resource Sharing
-* Principle of Least Privilege
-* AWS CLI Authentication
-* Secure Access Management
+Successfully completed:
+
+* ✅ IAM User Creation
+* ✅ Access Key Generation
+* ✅ IAM Policy Creation
+* ✅ Policy Attachment
+* ✅ S3 Bucket Policy Configuration
+* ✅ AWS CLI Configuration
+* ✅ Identity Verification
+* ✅ Cross-Account Access Validation
+* ✅ File Upload to Amazon S3
+
+---
+
+## Technologies Used
+
+* AWS IAM
+* Amazon S3
+* AWS CLI
+* IAM Policies
+* S3 Bucket Policies
+* JSON
+* Cross-Account Access
 
 ---
 
 ## Outcome
 
-Successfully implemented Cross-Account Access between two AWS accounts.
-
-The IAM user from the source account was able to authenticate through AWS CLI and upload objects to an Amazon S3 bucket owned by another AWS account using a combination of IAM permissions and S3 Bucket Policies.
+Successfully configured Cross-Account Access between two AWS accounts, allowing an IAM user from one account to securely access and upload objects to an Amazon S3 bucket located in another AWS account through IAM permissions and S3 Bucket Policies.
