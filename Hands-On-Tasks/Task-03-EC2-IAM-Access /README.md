@@ -55,7 +55,8 @@ The policy grants the following permissions:
 
 ### Screenshot
 
-![Policy JSON](policy-json.png)
+![Policy JSON](<img width="1492" height="463" alt="policy-json png" src="https://github.com/user-attachments/assets/5f189d57-64a3-4f65-adeb-0a6c8d8a4044" />
+)
 
 ---
 
@@ -87,7 +88,8 @@ EC2User
 
 ### Screenshot
 
-![Policy Assignment](iam-user-policy-assignment.png)
+![Policy Assignment](<img width="1895" height="792" alt="iam-user-policy-assignment png" src="https://github.com/user-attachments/assets/16a9bb25-f87a-4f91-8fe2-ba780283b64b" />
+)
 
 ---
 
@@ -99,7 +101,8 @@ Successfully launched EC2 instances using the granted permissions.
 
 ### Screenshot
 
-![EC2 Launch Success](ec2user-launch-success.png)
+![EC2 Launch Success](<img width="1861" height="380" alt="ec2user-launch-success png" src="https://github.com/user-attachments/assets/6540d054-0407-4da5-8ec2-23412c86f5ab" />
+)
 
 ---
 
